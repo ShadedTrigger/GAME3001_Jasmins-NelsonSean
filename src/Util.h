@@ -25,10 +25,12 @@ public:
 	static float squaredMagnitude(glm::vec2 vec);
 	static glm::vec2 limitMagnitude(glm::vec2 vector, float magnitude);
 	static float lerp(float a, float b, float t);
+	glm::vec2 Util::lerp(const glm::vec2 p0, const glm::vec2 p1, const float t);
 	static float lerpUnclamped(float a, float b, float t);
 	static float lerpAngle(float a, float b, float t);
 	static float repeat(float t, float length);
 	static float RandomRange(float min, float max);
+	glm::vec2 Util::RandomRange(const glm::vec2 p0, const glm::vec2 p1);
 	static float Sanitize(float value);
 	static glm::vec2 min(glm::vec2 vecA, glm::vec2 vecB);
 	static float min(float a, float b);
