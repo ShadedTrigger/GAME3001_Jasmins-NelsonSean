@@ -18,9 +18,23 @@ public:
 	void update() override;
 	void clean() override;
 
+	// getters and setters
+	void setDestination(const glm::vec2 destination);
+	void setMaxSpeed(const float speed);
+	void setOrientation(glm::vec2 orientation);
+	void setRotation(float angle);
+	float getRotation() const;
+
 private:
 
-	
+	glm::vec2 m_destination;
+	glm::vec2 m_targetDirection;
+	glm::vec2 m_orientation;
+	float m_rotationAngle;
+	float m_maxSpeed;
+
+	// private function
+	void m_Move();
 };
 
 #endif // defined (__SPACE_SHIP__)
