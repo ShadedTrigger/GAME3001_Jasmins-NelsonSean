@@ -82,7 +82,7 @@ void PlayScene::GUI_Function() const
 	// See examples by uncommenting the following - also look at imgui_demo.cpp in the IMGUI filter
 	//ImGui::ShowDemoWindow();
 	
-	ImGui::Begin("Your Window Title Goes Here", NULL, ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_MenuBar);
+	ImGui::Begin("Super Secret Settings Spectacle", NULL, ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_MenuBar);
 
 	static float speed = 10.0f;
 	if (ImGui::SliderFloat("MaxSpeed", &speed, 0.0f, 100.0f))
@@ -107,14 +107,8 @@ void PlayScene::GUI_Function() const
 	{
 		m_pSpaceShip->getTransform()->position = glm::vec2(100.0f, 100.0f);
 		m_pSpaceShip->setEnabled(false);
-	}
-
-	ImGui::SameLine();
-
-	if (ImGui::Button("Reset Target"))
-	{
-		m_pTarget->getTransform()->position = glm::vec2(400.0f, 300.0f);
-		m_pSpaceShip->setDestination(m_pTarget->getTransform()->position);
+		m_pSpaceShip->getRigidBody()->velocity = glm::vec2(0.0f, 0.0f);
+		m_pSpaceShip->setRotation(0.0f); // set angle to 0 deg
 	}
 
 	ImGui::Separator();
