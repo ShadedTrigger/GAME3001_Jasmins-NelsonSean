@@ -103,7 +103,7 @@ float SpaceShip::getRotation() const
 
 void SpaceShip::m_Move()
 {
-	auto deltaTime = TheGame::Instance()->getDeltaTime();
+	const auto deltaTime = TheGame::Instance()->getDeltaTime();
 
 	// direction with magnitude
 	m_targetDirection = m_destination - getTransform()->position;
@@ -111,9 +111,9 @@ void SpaceShip::m_Move()
 	// normalized direction
 	m_targetDirection = Util::normalize(m_targetDirection);
 
-	auto target_rotation = Util::signedAngle(getOrientation(), m_targetDirection);
+	const auto target_rotation = Util::signedAngle(getOrientation(), m_targetDirection);
 
-	auto turn_sensitivity = 5.0f;
+	const auto turn_sensitivity = 5.0f;
 
 	if (abs(target_rotation) > turn_sensitivity)
 	{
